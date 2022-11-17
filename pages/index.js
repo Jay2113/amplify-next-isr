@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 const App = ({ date }) => {
   const [afterBuildTimeSec, setAfterBuildTimeSec] = useState(0)
-  const shouldReload = afterBuildTimeSec > 120
+  const shouldReload = afterBuildTimeSec > 30
   const reload = () => {
     location.reload()
   }
@@ -37,7 +37,7 @@ export const getStaticProps = async () => {
     props: {
       date: new Date().toString()
     },
-    revalidate: 120
+    revalidate: 30
   }
 }
 
